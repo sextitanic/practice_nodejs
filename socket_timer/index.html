@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>時間同步</title>
+        <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+        <script type="text/javascript">
+            var socket = io.connect();
+            socket.on('now_date', function (time) {
+                document.getElementById('time').innerHTML = time.send_date;
+            });
+        </script>
+    </head>
+    <body>
+        現在時間 : <strong><span id="time"></span></strong>
+    </body>
+</html>
